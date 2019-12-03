@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
+-->
+
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>bouml</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>7.9</version>
+    <packageSourceUrl>https://github.com/zaktwist/bouml_package_chocolatey.git</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>zakz</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Bouml (Install)</title>
+    <authors>Bruno_Pagès</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://www.bouml.fr/</projectUrl>
+    <iconUrl>https://www.bouml.fr/images/bouml_logo.png</iconUrl>
+    <copyright>Copyright_©_2004-2018_par_Bruno_Pagès</copyright>
+    <!-- If there is a license Url available, it is required for the community feed -->
+    <licenseUrl>https://www.bouml.fr/legal-mentions.html</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+    <docsUrl>https://www.bouml.fr/documentation.html</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <tags>bouml uml</tags>
+    <summary>BOUML is a free UML 2 tool box including a modeler allowing you to specify and generate code in C++, Java, Idl, Php, Python and MySQL.</summary>
+    <description>
+		BOUML is a UML tool box allowing you to specify and generate code in C++, Java, Php, Python, MySQL and IDL.
+
+		The main key points of BOUML are :
+
+		it is again a free software since the release 7.0
+
+		it runs under Linux, MacOS X and Windows
+
+		it allows to program simultaneously in C++, Java, Php, Python and IDL
+
+		thank to a full access to the generated forms, you are the master and you decide what must be generated
+
+		it is extensible, and the external tools (I name them plug-out because they are executed outside BOUML) may be developed in C++ or Java, using BOUML for their definition as any other program (clearly I do not like very much language like Visual Basic, and I do not understand how this one can be imposed in a UML environment !)
+
+		it is fast and doesn't need a lot of memory to manage several thousands of classes, see benchmark
+
+		The initial reasons inciting me to develop BOUML was mainly : the pleasure to develop freely a tool and I hope to see it used by many people (I already had this very pleasant experience with two friends for Xcoral), and frankly a reaction to the very expensive price of the commercial UML tools.
+
+		Due to license violations, attacks and insults from people of wikipedia (the worst of them were the administrators Bapti, Dereckson and Esby), I have decided to stop the free version of Bouml (the release 4.23 was the last free version of the first sequence), and to move to the non free version starting by the 5.0, upto the 6.12
+
+		Finaly end of May 2017 I decided to distribute again BOUML as a free software
+
+		The implementation of BOUML since the 5.0 is based on Qt version 4, while the previous versions of BOUML was based on Qt 3 / 2.4.
+
+		The documentation is written with OpenOffice.org writer, many thanks for this powerful and pleasant office suite. The screen copies are made with Ksnapshot and sometimes modified by Le Gimp to have burred areas, thanks to the authors for these practical tools.
+
+		Some of the examples given in this documentation spoke about the organs, describing an organ is very easy for me in French ... not in English ! I get the English translation of the words associated to the organs from a Marya J. Fancey documentation, thanks to her.
+
+
+
+		License
+		Since the release 7.0 bouml/bouml.exe are free of use.
+
+		The releases of bouml/bouml.exe from the 5.0 up to the 6.12 was not free, to use them you needed to buy a license, and to run them on a host at a date autorized by this license. I don't manage any more these versions.
+
+		The code generators/reverse/roundtrip more projectControl and projectSynchro are free of use.
+
+		The other plug-outs are free; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.
+
+		The code generated for the plug-outs is under the term of the GNU General Public License because it contains the API sources. In the other cases the code generated by BOUML is usable without any restriction (i.e. no license).
+
+		Copying and distribution of the documentation or a part of the documentation and screenshots is permitted in any medium, provided a mention of Bouml or https://www.bouml.fr
+
+		The versions of bouml and associated tools older prior the 5.0 are free; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version. I don't manage any more these versions.
+
+		Copyright © 2004-2018 by Bruno Pagès.
+
+		BOUML is distributed on the Internet at http://www.bouml.fr/
+	</description>
+    <releaseNotes>
+		7.9 July 15 2019
+		When you opened a project with definitions for MySql you could have the error noaction is not a MySqlRefOption, fixed. (see Erreur : noaction is not a MySqlRefOption).
+		In the editor of an operation for C++ add the check boxes volatile value, const value and const expr value all managed through the keyword ${typeprefix}, and a tab to specify formal parameters.
+		Warning the keyword ${typeprefix} is only present by default in the models created from that version of Bouml. If you expect it in your existing projects you have to add it in the default operation C++ declaration/definition in the generation settings and in the existing C++ operation declaration/definitions.
+		(see C++ function/member templates).
+		C++ Generator 5.4
+		C++ Reverse 5.5
+		C++ Roundtrip 5.5
+		Manage the new features for C++
+		Plug-out upgrade 6.9
+		Add the the operations isCppVolatileValue, set_isCppVolatileValue, isCppConstValue, set_isCppConstValue, isCppConstExprValue, set_isCppConstExprValue, formals, removeFormal, addFormal and replaceFormal on the class UmlBaseOperation.
+		Html documentation Generator 6.5
+		Upgraded by plug-out upgrade.
+		Plug-out empty
+		Upgraded by plug-out upgrade.
+		Because the format of the BOUML files is changed, the previous releases of BOUML cannot read a project saved with this version. Obviously this release is able to read the projects made by previous releases of BOUML.
+	</releaseNotes>
+    <!-- =============================== -->      
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!--<dependencies>
+      <dependency id="" version="__MINIMUM_VERSION__" />
+      <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>-->
+    <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
+         - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
+         - You want to use Get-PackageParameters and on less than 0.11.0
+         - You want to take advantage of other functions in the core community maintainer's team extension package
+    -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
