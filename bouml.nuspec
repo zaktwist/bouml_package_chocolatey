@@ -128,7 +128,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 			
 			C++ Reverse 5.6
 			C++ Roundtrip 5.6
-			Correction of two problems. (see Update BoUml-projects https://www.bouml.fr/phpbb/viewtopic.php?f=2&t=535).
+			Correction of two problems. (see Update BoUml-projects).
 		</releaseNotes>
 		<!-- =============================== -->
 		<!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
